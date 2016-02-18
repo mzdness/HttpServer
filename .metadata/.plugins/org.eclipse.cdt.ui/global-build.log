@@ -1,0 +1,1937 @@
+01:29:30 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:29:34 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:29:43 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:29:47 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:30:12 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+01:33:11 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:33:17 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+../src/SocketTestClient.cpp: In function ‘int main(int, char**)’:
+../src/SocketTestClient.cpp:10:13: error: ‘strerror’ was not declared in this scope
+   strerror(0);
+             ^
+make: *** [src/SocketTestClient.o] Error 1
+01:36:41 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+01:36:55 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+01:37:08 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:38:18 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+01:38:49 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+01:39:14 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+13:33:11 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+13:33:12 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building target: SocketTestServer
+Invoking: Cross G++ Linker
+g++  -o "SocketTestServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: SocketTestServer
+ 
+14:10:32 **** Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:10:33 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:10:34 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building target: SocketTestServer
+Invoking: Cross G++ Linker
+g++  -o "SocketTestServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: SocketTestServer
+ 
+14:10:37 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:10:59 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+14:10:59 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:11:00 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+14:11:01 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:13:11 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:13:11 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:13:12 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+14:13:13 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+14:13:15 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+14:13:42 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:13:42 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:13:43 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+14:13:44 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+14:22:18 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:22:18 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:22:19 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+14:22:35 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:22:35 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:22:36 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+14:22:37 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:24:43 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+14:24:43 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+14:24:44 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+14:24:45 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+14:26:07 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:28:48 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:35:31 **** Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+17:35:34 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+17:35:37 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+Building file: ../src/SocketTestServer.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestServer.d" -MT"src/SocketTestServer.d" -o "src/SocketTestServer.o" "../src/SocketTestServer.cpp"
+Finished building: ../src/SocketTestServer.cpp
+ 
+Building target: SocketTestServer
+Invoking: Cross G++ Linker
+g++  -o "SocketTestServer"  ./src/SocketTestServer.o ./src/tcp_server.o   
+Finished building target: SocketTestServer
+ 
+17:37:16 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:53:52 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:53:59 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:22:42 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:22:46 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+../src/tcp_client.cpp: In constructor ‘tcp_client::tcp_client(char*, char*)’:
+../src/tcp_client.cpp:35:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (pBuffer + MAX_SIZE < message.size() )
+                                           ^
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building file: ../src/tcp_client.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_client.d" -MT"src/tcp_client.d" -o "src/tcp_client.o" "../src/tcp_client.cpp"
+Finished building: ../src/tcp_client.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+18:22:56 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+18:23:21 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:23:21 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+../src/SocketTestClient.cpp: In function ‘int main(int, char**)’:
+../src/SocketTestClient.cpp:19:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    tcp_client tc(ip,"11113");
+                            ^
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+18:23:22 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+18:23:31 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:23:31 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+../src/SocketTestClient.cpp: In function ‘int main(int, char**)’:
+../src/SocketTestClient.cpp:19:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    tcp_client tc(ip,"11113");
+                            ^
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+18:23:32 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+18:23:34 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+18:23:45 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+18:24:21 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+18:27:24 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/tcp_client.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_client.d" -MT"src/tcp_client.d" -o "src/tcp_client.o" "../src/tcp_client.cpp"
+../src/tcp_client.cpp: In constructor ‘tcp_client::tcp_client(char*, char*)’:
+../src/tcp_client.cpp:35:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (pBuffer + MAX_SIZE < message.size() )
+                                           ^
+Finished building: ../src/tcp_client.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+18:29:19 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+../src/SocketTestClient.cpp: In function ‘int main(int, char**)’:
+../src/SocketTestClient.cpp:19:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    tcp_client tc(ip,"11113");
+                            ^
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building file: ../src/tcp_client.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_client.d" -MT"src/tcp_client.d" -o "src/tcp_client.o" "../src/tcp_client.cpp"
+../src/tcp_client.cpp: In constructor ‘tcp_client::tcp_client(char*, char*)’:
+../src/tcp_client.cpp:35:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (pBuffer + MAX_SIZE < message.size() )
+                                           ^
+Finished building: ../src/tcp_client.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+18:31:28 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+../src/SocketTestClient.cpp: In function ‘int main(int, char**)’:
+../src/SocketTestClient.cpp:19:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    tcp_client tc(ip,"11113");
+                            ^
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building file: ../src/tcp_client.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_client.d" -MT"src/tcp_client.d" -o "src/tcp_client.o" "../src/tcp_client.cpp"
+../src/tcp_client.cpp: In constructor ‘tcp_client::tcp_client(char*, char*)’:
+../src/tcp_client.cpp:35:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (pBuffer + MAX_SIZE < message.size() )
+                                           ^
+Finished building: ../src/tcp_client.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+18:34:18 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:12:56 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::socket_accept()’:
+../src/tcp_server.cpp:57:3: error: continue statement not within a loop
+   continue;
+   ^
+make: *** [src/tcp_server.o] Error 1
+21:12:57 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:12:57 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:20:33 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::socket_accept()’:
+../src/tcp_server.cpp:57:38: error: no matching function for call to ‘std::exception::exception(const char [13])’
+   throw new exception ("accept error");
+                                      ^
+../src/tcp_server.cpp:57:38: note: candidates are:
+In file included from /usr/include/c++/4.8/ios:39:0,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/exception:63:5: note: std::exception::exception()
+     exception() _GLIBCXX_USE_NOEXCEPT { }
+     ^
+/usr/include/c++/4.8/exception:63:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/c++/4.8/exception:60:9: note: std::exception::exception(const std::exception&)
+   class exception
+         ^
+/usr/include/c++/4.8/exception:60:9: note:   no known conversion for argument 1 from ‘const char [13]’ to ‘const std::exception&’
+make: *** [src/tcp_server.o] Error 1
+21:20:34 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:20:34 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:20:36 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::socket_accept()’:
+../src/tcp_server.cpp:57:38: error: no matching function for call to ‘std::exception::exception(const char [13])’
+   throw new exception ("accept error");
+                                      ^
+../src/tcp_server.cpp:57:38: note: candidates are:
+In file included from /usr/include/c++/4.8/ios:39:0,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/exception:63:5: note: std::exception::exception()
+     exception() _GLIBCXX_USE_NOEXCEPT { }
+     ^
+/usr/include/c++/4.8/exception:63:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/c++/4.8/exception:60:9: note: std::exception::exception(const std::exception&)
+   class exception
+         ^
+/usr/include/c++/4.8/exception:60:9: note:   no known conversion for argument 1 from ‘const char [13]’ to ‘const std::exception&’
+make: *** [src/tcp_server.o] Error 1
+21:27:42 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:27:43 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:27:43 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:27:56 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:28:47 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:14 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:14 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:29:14 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:17 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:17 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:29:18 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:20 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:20 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:29:20 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:22 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:50 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:29:51 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:29:51 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+21:29:52 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:30:20 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:32:15 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:32:51 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:34:24 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:34:59 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:36:33 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:36:38 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:39:31 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:49:13 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+Building file: ../src/SocketTestClient.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SocketTestClient.d" -MT"src/SocketTestClient.d" -o "src/SocketTestClient.o" "../src/SocketTestClient.cpp"
+Finished building: ../src/SocketTestClient.cpp
+ 
+Building target: SocketTest
+Invoking: GCC C++ Linker
+g++  -o "SocketTest"  ./src/SocketTestClient.o ./src/tcp_client.o   
+Finished building target: SocketTest
+ 
+21:49:29 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+21:53:03 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+21:53:10 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+21:53:17 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+22:26:17 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+In file included from ../src/HttpServer.cpp:2:0:
+../src/tcp_server.h:30:1: error: expected unqualified-id before ‘}’ token
+ };
+ ^
+make: *** [src/HttpServer.o] Error 1
+02:19:09 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+02:19:10 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+02:19:10 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+13:58:12 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+13:58:16 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+13:58:17 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+17:45:31 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+In file included from ../src/HttpServer.cpp:2:0:
+../src/tcp_server.h:26:19: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  int cur_conn_cnt=0, ret;
+                   ^
+../src/tcp_server.h:36:7: error: extra qualification ‘tcp_server::’ on member ‘rcv_message_core’ [-fpermissive]
+  void tcp_server::rcv_message_core();
+       ^
+make: *** [src/HttpServer.o] Error 1
+17:45:31 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+17:45:31 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+17:45:34 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+In file included from ../src/HttpServer.cpp:2:0:
+../src/tcp_server.h:36:7: error: extra qualification ‘tcp_server::’ on member ‘rcv_message_core’ [-fpermissive]
+  void tcp_server::rcv_message_core();
+       ^
+make: *** [src/HttpServer.o] Error 1
+17:45:51 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/__back_tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/__back_tcp_server.d" -MT"src/__back_tcp_server.d" -o "src/__back_tcp_server.o" "../src/__back_tcp_server.cpp"
+Finished building: ../src/__back_tcp_server.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:205:41: error: could not convert ‘(void)(((tcp_server*)this)->tcp_server::server_fdset.fd_set::fds_bits[(((tcp_server*)this)->tcp_server::socket_fd / (((int)sizeof (__fd_mask)) * 8))] = (((tcp_server*)this)->tcp_server::server_fdset.fd_set::fds_bits[(((tcp_server*)this)->tcp_server::socket_fd / (((int)sizeof (__fd_mask)) * 8))] | (1l << (((tcp_server*)this)->tcp_server::socket_fd % (((int)sizeof (__fd_mask)) * 8)))))’ from ‘void’ to ‘bool’
+   if ( FD_SET(socket_fd, &server_fdset) )
+                                         ^
+make: *** [src/tcp_server.o] Error 1
+17:45:52 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+17:45:53 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+17:45:56 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:205:41: error: could not convert ‘(void)(((tcp_server*)this)->tcp_server::server_fdset.fd_set::fds_bits[(((tcp_server*)this)->tcp_server::socket_fd / (((int)sizeof (__fd_mask)) * 8))] = (((tcp_server*)this)->tcp_server::server_fdset.fd_set::fds_bits[(((tcp_server*)this)->tcp_server::socket_fd / (((int)sizeof (__fd_mask)) * 8))] | (1l << (((tcp_server*)this)->tcp_server::socket_fd % (((int)sizeof (__fd_mask)) * 8)))))’ from ‘void’ to ‘bool’
+   if ( FD_SET(socket_fd, &server_fdset) )
+                                         ^
+make: *** [src/tcp_server.o] Error 1
+17:46:20 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/__back_tcp_server.o ./src/tcp_server.o   
+./src/tcp_server.o: In function `std::fpos<__mbstate_t>::operator long() const':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:5: multiple definition of `tcp_server::socket_init()'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:5: first defined here
+./src/tcp_server.o: In function `tcp_server::socket_haddr_init_ipv4(char*)':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:14: multiple definition of `tcp_server::socket_haddr_init_ipv4(char*)'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:14: first defined here
+./src/tcp_server.o: In function `tcp_server::socket_set_reuseaddr()':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:22: multiple definition of `tcp_server::socket_set_reuseaddr()'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:22: first defined here
+./src/tcp_server.o: In function `tcp_server::socket_bind()':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:32: multiple definition of `tcp_server::socket_bind()'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:32: first defined here
+./src/tcp_server.o: In function `tcp_server::socket_listen(int)':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:42: multiple definition of `tcp_server::socket_listen(int)'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:42: first defined here
+./src/tcp_server.o: In function `tcp_server::socket_accept()':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:51: multiple definition of `tcp_server::socket_accept()'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:51: first defined here
+./src/tcp_server.o: In function `tcp_server::add_httpresponse_header(std::string&, std::basic_ifstream<char, std::char_traits<char> >&)':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:64: multiple definition of `tcp_server::add_httpresponse_header(std::string&, std::basic_ifstream<char, std::char_traits<char> >&)'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:64: first defined here
+./src/tcp_server.o: In function `tcp_server::add_httpresponse_data(std::string&, std::basic_ifstream<char, std::char_traits<char> >&)':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:82: multiple definition of `tcp_server::add_httpresponse_data(std::string&, std::basic_ifstream<char, std::char_traits<char> >&)'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:82: first defined here
+./src/tcp_server.o: In function `tcp_server::tcp_server(char*)':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:90: multiple definition of `tcp_server::tcp_server(char*)'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:90: first defined here
+./src/tcp_server.o: In function `tcp_server::tcp_server(char*)':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:90: multiple definition of `tcp_server::tcp_server(char*)'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:90: first defined here
+./src/tcp_server.o: In function `tcp_server::rcv_message()':
+/home/pzw/workspace/HttpServer/Debug/../src/tcp_server.cpp:165: multiple definition of `tcp_server::rcv_message()'
+./src/__back_tcp_server.o:/home/pzw/workspace/HttpServer/Debug/../src/__back_tcp_server.cpp:100: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [HttpServer] Error 1
+17:46:20 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+17:46:21 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+17:48:12 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:48:12 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+17:48:12 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+17:48:15 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+17:48:32 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:48:33 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+17:48:33 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+17:48:36 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+17:49:20 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+17:51:58 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:53:42 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:54:42 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:177:31: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘fd_set’)
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                               ^
+../src/tcp_server.cpp:177:31: note: candidates are:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:108:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^
+/usr/include/c++/4.8/ostream:108:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/usr/include/c++/4.8/ostream:117:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^
+/usr/include/c++/4.8/ostream:117:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/usr/include/c++/4.8/ostream:127:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^
+/usr/include/c++/4.8/ostream:127:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/4.8/ostream:166:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^
+/usr/include/c++/4.8/ostream:166:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long int’
+/usr/include/c++/4.8/ostream:170:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^
+/usr/include/c++/4.8/ostream:170:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long unsigned int’
+/usr/include/c++/4.8/ostream:174:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^
+/usr/include/c++/4.8/ostream:174:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘bool’
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:91:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘fd_set’ to ‘short int’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:181:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^
+/usr/include/c++/4.8/ostream:181:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘short unsigned int’
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:105:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘fd_set’ to ‘int’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:192:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^
+/usr/include/c++/4.8/ostream:192:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘unsigned int’
+/usr/include/c++/4.8/ostream:201:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^
+/usr/include/c++/4.8/ostream:201:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long long int’
+/usr/include/c++/4.8/ostream:205:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^
+/usr/include/c++/4.8/ostream:205:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long long unsigned int’
+/usr/include/c++/4.8/ostream:220:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^
+/usr/include/c++/4.8/ostream:220:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘double’
+/usr/include/c++/4.8/ostream:224:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^
+/usr/include/c++/4.8/ostream:224:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘float’
+/usr/include/c++/4.8/ostream:232:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^
+/usr/include/c++/4.8/ostream:232:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long double’
+/usr/include/c++/4.8/ostream:245:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^
+/usr/include/c++/4.8/ostream:245:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘const void*’
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:119:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   ‘fd_set’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^
+/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘fd_set’)
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^
+/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘char’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^
+/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘char’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^
+/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘signed char’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^
+/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘unsigned char’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^
+/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   mismatched types ‘const _CharT*’ and ‘fd_set’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const char*’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^
+/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const char*’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^
+/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const signed char*’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^
+/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const unsigned char*’
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                  ^
+../src/tcp_server.cpp:177:59: error: ‘i’ was not declared in this scope
+   cout << "added listen fd: " << server_fdset << " No."<< i  << endl;
+                                                           ^
+make: *** [src/tcp_server.o] Error 1
+17:54:57 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:177:31: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘fd_set’)
+   cout << "added listen fd: " << server_fdset  << endl;
+                               ^
+../src/tcp_server.cpp:177:31: note: candidates are:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:108:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^
+/usr/include/c++/4.8/ostream:108:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/usr/include/c++/4.8/ostream:117:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^
+/usr/include/c++/4.8/ostream:117:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/usr/include/c++/4.8/ostream:127:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^
+/usr/include/c++/4.8/ostream:127:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/4.8/ostream:166:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^
+/usr/include/c++/4.8/ostream:166:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long int’
+/usr/include/c++/4.8/ostream:170:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^
+/usr/include/c++/4.8/ostream:170:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long unsigned int’
+/usr/include/c++/4.8/ostream:174:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^
+/usr/include/c++/4.8/ostream:174:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘bool’
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:91:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘fd_set’ to ‘short int’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:181:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^
+/usr/include/c++/4.8/ostream:181:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘short unsigned int’
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:105:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘fd_set’ to ‘int’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:192:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^
+/usr/include/c++/4.8/ostream:192:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘unsigned int’
+/usr/include/c++/4.8/ostream:201:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^
+/usr/include/c++/4.8/ostream:201:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long long int’
+/usr/include/c++/4.8/ostream:205:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^
+/usr/include/c++/4.8/ostream:205:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long long unsigned int’
+/usr/include/c++/4.8/ostream:220:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^
+/usr/include/c++/4.8/ostream:220:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘double’
+/usr/include/c++/4.8/ostream:224:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^
+/usr/include/c++/4.8/ostream:224:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘float’
+/usr/include/c++/4.8/ostream:232:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^
+/usr/include/c++/4.8/ostream:232:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘long double’
+/usr/include/c++/4.8/ostream:245:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^
+/usr/include/c++/4.8/ostream:245:7: note:   no known conversion for argument 1 from ‘fd_set’ to ‘const void*’
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:119:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘fd_set’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   ‘fd_set’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^
+/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘fd_set’)
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^
+/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘char’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^
+/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘char’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^
+/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘signed char’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^
+/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘unsigned char’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^
+/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   mismatched types ‘const _CharT*’ and ‘fd_set’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/ostream:612:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const char*’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^
+/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const char*’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^
+/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const signed char*’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/tcp_server.h:2,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^
+/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
+../src/tcp_server.cpp:177:34: note:   cannot convert ‘((tcp_server*)this)->tcp_server::server_fdset’ (type ‘fd_set’) to type ‘const unsigned char*’
+   cout << "added listen fd: " << server_fdset  << endl;
+                                  ^
+make: *** [src/tcp_server.o] Error 1
+17:55:19 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:56:13 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+17:59:38 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+18:03:30 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+18:03:36 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:04:46 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+18:05:59 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+18:06:57 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+18:07:26 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:07:29 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+18:09:45 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+18:09:51 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+19:53:11 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+20:07:49 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+20:13:06 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+22:45:28 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+22:45:29 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+22:45:29 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+22:45:52 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+In file included from ../src/HttpServer.cpp:2:0:
+../src/tcp_server.h:21:21: error: field ‘host_addr’ has incomplete type
+  struct sockaddr_in host_addr;
+                     ^
+../src/tcp_server.h:22:21: error: field ‘rmt_addr’ has incomplete type
+  struct sockaddr_in rmt_addr;
+                     ^
+make: *** [src/HttpServer.o] Error 1
+22:45:53 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+22:45:53 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+22:46:04 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+22:46:05 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+22:46:05 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+23:07:50 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+In file included from ../src/HttpServer.cpp:2:0:
+../src/tcp_server.h:20:21: error: field ‘host_addr’ has incomplete type
+  struct sockaddr_in host_addr;
+                     ^
+../src/tcp_server.h:21:21: error: field ‘rmt_addr’ has incomplete type
+  struct sockaddr_in rmt_addr;
+                     ^
+make: *** [src/HttpServer.o] Error 1
+23:07:51 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+23:07:51 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+23:08:58 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message_core()’:
+../src/tcp_server.cpp:119:47: error: ‘read’ was not declared in this scope
+   int read_len = read(accept_fd,buffer,MAXSIZE);
+                                               ^
+../src/tcp_server.cpp:143:19: error: ‘close’ was not declared in this scope
+    close(accept_fd);
+                   ^
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:246:21: error: ‘close’ was not declared in this scope
+      close(accept_fd);
+                     ^
+make: *** [src/tcp_server.o] Error 1
+23:08:58 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+23:08:59 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+23:20:42 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:191:20: error: no match for ‘operator=’ (operand types are ‘epoll_data_t {aka epoll_data}’ and ‘int’)
+  epoll_reg_ev.data = socket_fd;
+                    ^
+../src/tcp_server.cpp:191:20: note: candidate is:
+In file included from ../src/tcp_server.h:4:0,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/x86_64-linux-gnu/sys/epoll.h:79:15: note: epoll_data& epoll_data::operator=(const epoll_data&)
+ typedef union epoll_data
+               ^
+/usr/include/x86_64-linux-gnu/sys/epoll.h:79:15: note:   no known conversion for argument 1 from ‘int’ to ‘const epoll_data&’
+make: *** [src/tcp_server.o] Error 1
+23:20:43 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+23:20:43 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+23:20:47 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:191:20: error: no match for ‘operator=’ (operand types are ‘epoll_data_t {aka epoll_data}’ and ‘int’)
+  epoll_reg_ev.data = socket_fd;
+                    ^
+../src/tcp_server.cpp:191:20: note: candidate is:
+In file included from ../src/tcp_server.h:4:0,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/x86_64-linux-gnu/sys/epoll.h:79:15: note: epoll_data& epoll_data::operator=(const epoll_data&)
+ typedef union epoll_data
+               ^
+/usr/include/x86_64-linux-gnu/sys/epoll.h:79:15: note:   no known conversion for argument 1 from ‘int’ to ‘const epoll_data&’
+make: *** [src/tcp_server.o] Error 1
+23:20:47 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+23:20:48 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+23:20:49 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:191:20: error: no match for ‘operator=’ (operand types are ‘epoll_data_t {aka epoll_data}’ and ‘int’)
+  epoll_reg_ev.data = socket_fd;
+                    ^
+../src/tcp_server.cpp:191:20: note: candidate is:
+In file included from ../src/tcp_server.h:4:0,
+                 from ../src/tcp_server.cpp:1:
+/usr/include/x86_64-linux-gnu/sys/epoll.h:79:15: note: epoll_data& epoll_data::operator=(const epoll_data&)
+ typedef union epoll_data
+               ^
+/usr/include/x86_64-linux-gnu/sys/epoll.h:79:15: note:   no known conversion for argument 1 from ‘int’ to ‘const epoll_data&’
+make: *** [src/tcp_server.o] Error 1
+23:20:49 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+23:20:49 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+23:21:09 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+../src/tcp_server.cpp: In member function ‘void tcp_server::rcv_message()’:
+../src/tcp_server.cpp:184:16: warning: variable ‘active_fd_cnt’ set but not used [-Wunused-but-set-variable]
+  int epoll_fd, active_fd_cnt;
+                ^
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+23:21:10 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+23:21:10 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+00:17:45 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+00:17:46 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+00:17:46 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+00:17:49 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+00:20:31 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/HttpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HttpServer.d" -MT"src/HttpServer.d" -o "src/HttpServer.o" "../src/HttpServer.cpp"
+Finished building: ../src/HttpServer.cpp
+ 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+00:20:32 **** Incremental Build of configuration Debug for project SocketTest ****
+make all 
+make: Nothing to be done for `all'.
+00:20:32 **** Incremental Build of configuration Debug for project SocketTestServer ****
+make all 
+make: Nothing to be done for `all'.
+00:20:36 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+00:22:39 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+00:25:56 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+00:27:37 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+00:31:46 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+00:48:20 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 
+00:49:16 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+00:49:20 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+make: Nothing to be done for `all'.
+00:50:25 **** Incremental Build of configuration Debug for project HttpServer ****
+make all 
+Building file: ../src/tcp_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
+Finished building: ../src/tcp_server.cpp
+ 
+Building target: HttpServer
+Invoking: GCC C++ Linker
+g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
+Finished building target: HttpServer
+ 

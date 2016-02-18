@@ -1,0 +1,11 @@
+#include <iostream>
+#include "tcp_server.h"
+using namespace std;
+
+int main(int argc,char* argv[])
+{
+		char ip[] = "127.0.0.1";
+		char port[] = "9876";
+        tcp_client tc(ip,port);
+        return 0;
+}

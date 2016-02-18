@@ -1,0 +1,18 @@
+/*
+ * socketclient.cpp
+ *
+ *  Created on: Feb 16, 2016
+ *      Author: pzw
+ */
+
+#include "socketclient.h"
+
+socket_client::socket_client() {
+	// TODO Auto-generated constructor stub
+
+}
+
+socket_client::~socket_client() {
+	// TODO Auto-generated destructor stub
+}
+

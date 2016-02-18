@@ -1,0 +1,22 @@
+/*
+ * socketclient.h
+ *
+ *  Created on: Feb 16, 2016
+ *      Author: pzw
+ */
+
+#ifndef SOCKETCLIENT_H_
+#define SOCKETCLIENT_H_
+
+class socket_client {
+private:
+	int socket_fd;
+	char message[4096];
+	struct socket_addr_in server_addr;
+public:
+	socket_client();
+	socket_client(char* server_ip, char* server_port);
+	virtual ~socket_client();
+};
+
+#endif /* SOCKETCLIENT_H_ */

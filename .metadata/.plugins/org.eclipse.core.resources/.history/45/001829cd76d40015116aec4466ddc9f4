@@ -1,0 +1,17 @@
+/*
+ * socketclient.h
+ *
+ *  Created on: Feb 16, 2016
+ *      Author: pzw
+ */
+
+#ifndef SOCKETCLIENT_H_
+#define SOCKETCLIENT_H_
+
+class socket_client {
+public:
+	socket_client();
+	virtual ~socket_client();
+};
+
+#endif /* SOCKETCLIENT_H_ */

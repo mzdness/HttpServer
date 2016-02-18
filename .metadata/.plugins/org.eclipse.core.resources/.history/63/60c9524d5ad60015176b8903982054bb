@@ -1,0 +1,264 @@
+#include "tcp_server.h"
+using namespace std;
+
+void tcp_server::socket_init()
+{
+	if(( socket_fd = socket(PF_INET,SOCK_STREAM,IPPROTO_TCP)) < 0 )
+	{
+		cout<<"socket error"<< endl;
+		exit(0);
+	}
+}
+
+void tcp_server::socket_haddr_init_ipv4(char *port)
+{
+	memset(&host_addr,0,sizeof(host_addr));
+	host_addr.sin_family = AF_INET;
+	host_addr.sin_port = htons(atoi(port));
+	host_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+}
+
+void tcp_server::socket_set_reuseaddr()
+{
+	int n=1;
+	if ( setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, &n, sizeof(n)) == -1)
+	{
+	  cout << "setsockopt" << endl;
+	  exit(1);
+	}
+}
+
+void tcp_server::socket_bind()
+{
+	int ret;
+	if ( (ret = bind(socket_fd, (sockaddr *)&host_addr,sizeof(host_addr))) < 0)
+	{
+		cout<<"bind failed: " << ret <<endl;
+		exit(0);
+	}
+}
+
+void tcp_server::socket_listen(int max_syn_notaccpet)
+{
+	if (listen(socket_fd,max_syn_notaccpet) < 0)
+	{
+		cout << "listen error" << endl;
+		exit(0);
+	}
+}
+
+void tcp_server::socket_accept()
+{
+	socklen_t rcv_size = sizeof(sockaddr);
+	if ((accept_fd = accept(socket_fd, (struct sockaddr*) &rmt_addr, &rcv_size))<0)
+	{
+		cout << "accept error" << endl;
+		throw exception();
+		/* continue;*/
+	}
+	cout << "received connection from " << inet_ntoa(rmt_addr.sin_addr) << ':' << ntohs(rmt_addr.sin_port) << endl;
+}
+
+void tcp_server::add_httpresponse_header(string &send_all, ifstream &f_in)
+{
+	send_all.append("HTTP/1.1 200 OK\r\n");
+	//send_all.append("Date: Sat, 31 Dec 2005 23:59:59 GMT\r\n"); can't find an ez way
+	send_all.append("Content-Type: text/html; charset=charset=utf-8\r\n");
+
+	send_all.append("Content-Length: ");
+	char len[10];
+	f_in.seekg (0, f_in.end);
+	int length = f_in.tellg();
+	f_in.seekg (0, f_in.beg);
+    sprintf(len,"%d",length);
+    send_all.append(len);
+
+	send_all.append("\r\n");
+	send_all.append("\r\n");
+}
+
+void tcp_server::add_httpresponse_data(string &send_all, ifstream &f_in)
+{
+	string tmp;
+	while (getline(f_in,tmp))
+		send_all += tmp;
+	send_all.append("\r\n");
+	send_all.append("\r\n");
+}
+
+void tcp_server::set_nonblocking()
+{
+	int flags = fcntl(socket_fd, F_GETFL, 0);
+	fcntl(socket_fd, F_SETFL, flags|O_NONBLOCK);
+}
+
+void tcp_server::set_blocking()
+{
+	int flags = fcntl(socket_fd, F_GETFL, 0);
+	fcntl(socket_fd, F_SETFL, flags & ~O_NONBLOCK);
+}
+
+tcp_server::tcp_server(char* port)
+{
+	socket_init();
+	socket_haddr_init_ipv4(port);
+	socket_set_reuseaddr();
+	socket_bind();
+	socket_listen(32);
+	set_nonblocking();
+}
+
+void tcp_server::rcv_message_core()
+{
+	char buffer[MAXSIZE];
+	memset(buffer,0,MAXSIZE);
+	bool http_end = false;
+	string rcv_all;
+
+	while(1)
+	{
+		int read_len = read(accept_fd,buffer,MAXSIZE);
+		cout << "read length = " << read_len  << endl;
+
+
+		if( read_len  < 0 )
+		{
+			cout << "Read() error fix!" << endl;
+		}
+		else if( read_len  > 0 )
+		{
+			//cout<<"Received message: "<< buffer << endl;
+			rcv_all.append(buffer,read_len);
+			if ( (rcv_all.size() >= 4) &&
+				(rcv_all.substr(rcv_all.size()-4,rcv_all.size()) == "\r\n\r\n"))
+			{
+				http_end = true;
+				cout << "http_end" << endl;
+			}
+		}
+
+		// 0 and httd_end are processed alone, which is ugly, cause: http_end
+		if (read_len == 0) // bad request;
+		{
+			cout << "read end " << endl;
+			close(accept_fd);
+			for (int i =0; i < 3; ++i)
+			{
+				if (client_fd[i] == accept_fd)
+				{
+					client_fd[i] = 0;
+					break;
+				}
+			}
+			--cur_conn_cnt;
+
+			//exit(0);
+			return ;
+		}
+		else if (http_end) // http request normal end
+		{
+			string send_all;
+			ifstream file_sin;
+			http_end = false;
+			cout << "close accept_fd: " << endl << rcv_all << endl;
+			rcv_all.clear();
+
+			file_sin.open("index.html");
+			add_httpresponse_header(send_all,file_sin);
+			add_httpresponse_data(send_all,file_sin);
+			if( send( accept_fd,send_all.c_str(), send_all.size() ,0 ) < 0 ) {
+				cout << "send message error\n"<<endl;
+				//exit(0);
+				return ;
+			}
+		}
+	}
+}
+
+void tcp_server::rcv_message()
+{
+	int epoll_fd, active_fd_cnt;
+	int timeout_wait_millsec = -1;
+	struct epoll_event tmp_ep_reg_ev, epoll_events[MAX_EP_EVENTS];
+
+	// init epoll file descriptor
+	epoll_fd = epoll_create(1);
+
+	// register listener socket's epoll event
+	tmp_ep_reg_ev.data.fd = socket_fd;
+	tmp_ep_reg_ev.events = EPOLLIN | EPOLLET; // reg input event and use edge triggered
+	epoll_ctl(epoll_fd, EPOLL_CTL_ADD, socket_fd, &tmp_ep_reg_ev);
+
+
+	while (1)
+	{
+		// run select, if time out, continue, else begin process
+		cout << "waiting connection" << endl;
+		active_fd_cnt = epoll_wait(epoll_fd, epoll_events, MAX_EP_EVENTS, timeout_wait_millsec);
+		if(active_fd_cnt < 0){
+			perror("epoll_wait!\n");
+			break;
+		}
+		else if(active_fd_cnt == 0){
+			cout << "epoll_wait timeout!" << endl;
+			continue;
+		}
+
+		for (int i = 0; i != active_fd_cnt; ++i)
+		{
+			if (epoll_events[i].data.fd == socket_fd) // new connection arrive
+			{
+				socket_accept();
+				tmp_ep_reg_ev.data.fd = accept_fd;
+				tmp_ep_reg_ev.events = EPOLLIN;
+			}
+
+
+
+		}
+
+
+		// loop all fd and handle request
+		for (int i=0;i!=3;++i)
+		{
+			if ( FD_ISSET(client_fd[i],&server_fdset) )
+			{
+				accept_fd = client_fd[i];
+				rcv_message_core(); // blocking
+			}
+		}
+		// check if listener got new conn
+		cout << "check listener"<<endl;
+		if ( FD_ISSET(socket_fd, &server_fdset) )
+		{
+			try {
+				socket_accept();
+				if (cur_conn_cnt < 3)
+				{
+					for (int i =0; i < 3; ++i)
+					{
+						if (client_fd[i]==0) // a vacancy
+						{
+							client_fd[i] = accept_fd;
+							++cur_conn_cnt;
+							cout << "added conn: " << accept_fd << " No."<< i  << endl;
+							if (accept_fd > max_fd)
+								max_fd = accept_fd;
+							break;
+						}
+					}
+				}
+				else // refuse to serve
+				{
+					cout << "reach max conn, active close!" << endl;
+					close(accept_fd);
+				}
+			}
+			catch (...){
+				continue;
+			}
+		}
+
+		//close(accept_fd);
+	}
+}
