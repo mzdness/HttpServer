@@ -1,0 +1,13 @@
+22:36:08 **** Incremental Build of configuration Release for project P2P_transfer ****
+make all 
+Building target: P2P_transfer
+Invoking: Cross G++ Linker
+g++  -o "P2P_transfer"  ./src/P2P_transfer.o ./src/tcp_server.o   
+./src/P2P_transfer.o: In function `start_send()':
+P2P_transfer.cpp:(.text+0x2f9): undefined reference to `pthread_create'
+P2P_transfer.cpp:(.text+0x318): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make: *** [P2P_transfer] Error 1
+
+22:36:08 Build Finished (took 144ms)
+

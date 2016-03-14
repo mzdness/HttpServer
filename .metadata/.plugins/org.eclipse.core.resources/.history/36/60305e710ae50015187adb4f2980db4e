@@ -1,0 +1,29 @@
+#include <pthread.h>
+#include <vector>
+using namespace std;
+
+template <typename T>
+class BoundedBlockingQueue 
+{ 
+public: 
+    BoundedBlockingQueue (int size) : maxSize(size) 
+    { 
+        pthread_mutex_init(&_lock, NULL); 
+        pthread_cond_init(&_rcond, NULL);
+        pthread_cond_init(&_wcond, NULL);
+        _array.reserve(maxSize);
+    } 
+    ~BoundedBlockingQueue ( ) 
+    { 
+        pthread_mutex_destroy(&_lock);
+        pthread_cond_destroy(&_rcond);
+        pthread_cond_destroy(&_wcond);
+    } 
+    void push(const T& data);
+    T pop();
+private: 
+    vector<T> _array; // or T* _array if you so prefer
+    int maxSize;
+    pthread_mutex_t _lock;
+    pthread_cond_t _rcond, _wcond;
+};

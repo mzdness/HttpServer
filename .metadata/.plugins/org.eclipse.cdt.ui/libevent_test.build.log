@@ -1,0 +1,29 @@
+22:53:47 **** Incremental Build of configuration Debug for project libevent_test ****
+make all 
+Building file: ../src/libevent_test_new.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/libevent_test_new.d" -MT"src/libevent_test_new.d" -o "src/libevent_test_new.o" "../src/libevent_test_new.cpp"
+../src/libevent_test_new.cpp: In function ‘void* request_main(void*)’:
+../src/libevent_test_new.cpp:242:37: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  connectServer("127.0.0.1",8888,base);
+                                     ^
+../src/libevent_test_new.cpp: In function ‘int main(int, char**)’:
+../src/libevent_test_new.cpp:258:69: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     ret = pthread_create(&pth_pool_id[0],NULL,worker_thread,(void *)no_1);
+                                                                     ^
+../src/libevent_test_new.cpp:261:69: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     ret = pthread_create(&pth_pool_id[1],NULL,worker_thread,(void *)no_2);
+                                                                     ^
+../src/libevent_test_new.cpp:270:64: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   ret = pthread_create(&pth_req_main,NULL,request_main,(void *)no_2);
+                                                                ^
+Finished building: ../src/libevent_test_new.cpp
+ 
+Building target: libevent_test
+Invoking: GCC C++ Linker
+g++  -o "libevent_test"  ./src/libevent_test_new.o   -levent -lpthread -levent_pthreads
+Finished building target: libevent_test
+ 
+
+22:53:47 Build Finished (took 532ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;libevent_test/src/libevent_test&apos; to &apos;libevent_test.cpp&apos;" description="Rename resource &apos;libevent_test&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/libevent_test" name="libevent_test.cpp" stamp="1455876589270" updateReferences="true"/>
+</session>

@@ -1,0 +1,296 @@
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <pthread.h>
+#include "BlockingQueue.h"
+#include <event2/event.h>
+#include <event2/event_compat.h>
+#include <event2/event_struct.h>
+#include <event2/thread.h>
+#include <event2/listener.h>
+#include <event2/bufferevent.h>
+#include <event2/buffer.h>
+#include <cstdlib>
+#include <fcntl.h>
+#include <error.h>
+#include <string>
+using namespace std;
+
+
+enum status_e
+{
+	READ = 0,
+	CLOSE,
+	CONNECTED
+};
+
+struct work
+{
+	int fd;
+	void* pEv;
+	status_e status;
+	short events;
+};
+BoundedBlockingQueue<work*> work_queue(10);
+
+sockaddr_in* init_sin_ipv4(const char* ip_addr, short port)
+{
+	sockaddr_in* psin = new sockaddr_in;
+    memset(psin, 0, sizeof(sockaddr_in));
+    psin->sin_family = AF_INET;
+    psin->sin_addr.s_addr = inet_addr(ip_addr);
+    psin->sin_port = htons(port);
+    return psin;
+}
+
+// 读事件回调函数
+void *worker_thread(void *arg)
+{
+    int iLen=1;
+	cout << "worker "<< arg << " init!" << endl;
+    //char real_buf[1500];
+    string real_buf;
+    char read_buf[3];
+	while(1)
+	{
+		//int  iCliFd = work_q[--p_q];
+		work *pwork = work_queue.pop();
+		bufferevent *bev = (bufferevent *)pwork->pEv;
+
+		if (pwork->status == CLOSE)
+		{
+			if (pwork->events & BEV_EVENT_ERROR)
+					perror("Error from bufferevent");
+			if (pwork->events & (BEV_EVENT_EOF | BEV_EVENT_ERROR)) {
+			    	// use this to close socket
+				if (bev)
+					bufferevent_free(bev);
+				else
+					cerr << "bufferevent_free error" << endl;
+			}
+	        cout << "handle event" << "-signature: " << arg <<endl;
+			continue;
+		}
+		else if (pwork->status == CONNECTED)
+		{
+			cout << "CONNECTED" <<"-signature: " << arg << endl;
+			char wel_msg[] = "Hi server\n\r\n";
+			bufferevent_write(bev,wel_msg,sizeof(wel_msg));
+	        //real_buf.clear();
+	        if (pwork)
+	        	delete pwork;
+	        else
+	        	cerr << "pwork error" << endl;
+		    //struct evbuffer *output = bufferevent_get_output(bev);
+		    //int ret = evbuffer_add(output,"Hi serv\r\n",10);
+	        continue;
+		}
+
+        //struct evbuffer *input = bufferevent_get_input(bev);
+
+        // here we process read event: read bev until it drains out
+        while(1)
+        {
+            //iLen = evbuffer_remove(input,read_buf,sizeof(read_buf)-1);
+            iLen = bufferevent_read(bev,read_buf,sizeof(read_buf)-1);
+            if (iLen > 0)
+            {
+            	read_buf[iLen] = 0;
+            	real_buf += read_buf;
+            }
+            else
+            	break;
+        }
+
+        // remove tailing \r\n
+        if (real_buf.size()>2)
+        {
+        	if (*(real_buf.end()-1) == '\n' && *(real_buf.end()-2) == '\r')
+        	{
+				real_buf.erase(real_buf.end()-1);
+				real_buf.erase(real_buf.end()-1);
+        	}
+
+			cout << "recv: " << real_buf << " size = " << real_buf.size()
+					<< "-signature: " << arg endl;
+        }
+
+        if (real_buf == "Hi server\n")
+			bufferevent_write(bev,"Hi client\n",10);
+        // free work resources
+        iLen = 1;
+        real_buf.clear();
+        if (pwork)
+        	delete pwork;
+        else
+        	cerr << "pwork error" << endl;
+
+        //struct evbuffer *output = bufferevent_get_output(bev);
+
+        /* Copy all the data from the input buffer to the output buffer. */
+        //evbuffer_add_buffer(output, input);
+	}
+	return 0;
+}
+
+//void onRead(int iCliFd, short iEvent, void *arg)
+void onRead(struct bufferevent *bev, void *arg)
+{
+	work * pwork = new work;
+	pwork->pEv = bev;
+	pwork->status = READ;
+	cout << "push a read! " << work_queue.get_size() <<endl;
+	work_queue.push(pwork);
+}
+
+void onEvent(struct bufferevent *bev, short events, void *ctx)
+{
+	work * pwork = new work;
+	pwork->pEv = bev;
+	if (events & BEV_EVENT_EOF)
+		pwork->status = CLOSE;
+	else if (events & BEV_EVENT_CONNECTED)
+		pwork->status = CONNECTED;
+	pwork->events = events;
+	cout << "push a event! " << work_queue.get_size() <<endl;
+	work_queue.push(pwork);
+}
+
+// 连接请求事件回调函数
+void onAccept(struct evconnlistener *listener,
+	    evutil_socket_t iCliFd, struct sockaddr *address, int socklen,
+	    void *arg)
+{
+    /* We got a new connection! Set up a bufferevent for it. */
+    struct event_base *base = evconnlistener_get_base(listener);
+    struct bufferevent *bev = bufferevent_socket_new(
+            base, iCliFd, BEV_OPT_CLOSE_ON_FREE);
+    cout << "accept!" << iCliFd << endl;
+
+    bufferevent_setcb(bev, onRead, NULL, onEvent, arg);
+    bufferevent_enable(bev, EV_READ|EV_WRITE); // is it persist?
+}
+
+// Instead of regular events, which give callbacks when the underlying
+// transport is ready to be read or written, a bufferevent invokes its
+// user-supplied callbacks when it has read or written enough data.
+void onWrite(bufferevent *bev, void *ctx)
+{
+	cout << "in onWrite!" << endl;
+    //struct evbuffer *output = bufferevent_get_output(bev);
+    //int ret = evbuffer_add(output,"Hi serv\r\n",10);
+}
+
+int connectServer(char* ip, int port,event_base* base)
+{
+	// here fd set to -1 means we will set it later
+    struct bufferevent *bev = bufferevent_socket_new(base, -1, BEV_OPT_CLOSE_ON_FREE);
+
+    bufferevent_setcb(bev, onRead, onWrite, onEvent, NULL);
+
+    struct sockaddr_in *psin = init_sin_ipv4("127.0.0.1",8888);
+
+	bufferevent_socket_connect(bev, (struct sockaddr *)psin, sizeof(sockaddr));
+
+    bufferevent_enable(bev, EV_READ|EV_WRITE); // is it persist?
+
+	/*
+     int fd = socket( AF_INET, SOCK_STREAM, 0 );
+     cout<<"fd= "<<fd<<endl;
+     if(-1 == fd){
+         cout<<"Error, connectServer() quit"<<endl;
+         return -1;
+     }
+     struct sockaddr_in remote_addr; //服务器端网络地址结构体
+     memset(&remote_addr,0,sizeof(remote_addr)); //数据初始化--清零
+     remote_addr.sin_family=AF_INET; //设置为IP通信
+     remote_addr.sin_addr.s_addr=inet_addr(ip);//服务器IP地址
+     remote_addr.sin_port=htons(port); //服务器端口号
+     int con_result = connect(fd, (struct sockaddr*) &remote_addr, sizeof(struct sockaddr));
+     if(con_result < 0){
+         cout<<"Connect Error!"<<endl;
+         close(fd);
+         return -1;
+     }
+     cout<<"con_result="<<con_result<<endl;
+	 */
+
+     //struct evbuffer *output = bufferevent_get_output(bev);
+     //int ret = evbuffer_add(output,"Hi serv\r\n",10);
+    // int ret = bufferevent_write(bev,"Hi serv\r\n",10);
+
+     //int write_num = write(fd, "Hi server",10);
+
+    // bufferevent_free(bev);
+     //bufferevent_setcb(bev, onRead, NULL, onEvent, arg);
+     //bufferevent_enable(bev, EV_READ|EV_WRITE); // is it persist?
+
+     return 0;
+ }
+
+void *request_main(void *arg)
+{
+	event_base* base = event_base_new();
+	connectServer("127.0.0.1",8888,base);
+
+    event_base_dispatch(base);
+    return 0;
+}
+
+int main(int argc, char* argv[])
+{
+    evthread_use_pthreads();
+
+
+    pthread_t pth_pool_id[2];
+    pthread_t pth_req_main;
+    int no_1 = 1,no_2 = 2;
+
+    int ret;
+    ret = pthread_create(&pth_pool_id[0],NULL,worker_thread,(void *)no_1);
+    if (ret<0)
+    	cerr << "unable to init worker_thread 1!" << endl;
+    ret = pthread_create(&pth_pool_id[1],NULL,worker_thread,(void *)no_2);
+    if (ret<0)
+    	cerr << "unable to init worker_thread 2!" << endl;
+
+
+    //  this thread handle all outgoing socket, send out file request and receive file segment
+    // comment this thread to disable active conn
+    if (argc > 1 && argv[1][0] == 'c')
+    {
+		ret = pthread_create(&pth_req_main,NULL,request_main,(void *)no_2);
+		if (ret<0)
+			cerr << "[s]unable to init request_main thread!" << endl;
+		pthread_join(pth_req_main,NULL);
+    }
+    else
+    {
+        // this thread handle all incoming socket, receive file req and send the requested file segment
+        // 初始化base
+		event_base* base;    // 事件base
+		base = event_base_new();
+
+		struct sockaddr_in *psin = init_sin_ipv4("127.0.0.1",8888);
+
+		evconnlistener *listener;
+		listener = evconnlistener_new_bind(base, onAccept, NULL,
+				LEV_OPT_CLOSE_ON_FREE|LEV_OPT_REUSEABLE, -1,
+				(sockaddr*)psin, sizeof(sockaddr));
+
+		// 事件循环
+		event_base_dispatch(base);
+
+		// how to get here?
+		if (listener)
+			evconnlistener_free(listener);
+		else
+			cerr << "[s] listener error!" << endl;
+    }
+    return 0;
+}

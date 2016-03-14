@@ -1,15 +1,6 @@
-00:50:25 **** Incremental Build of configuration Debug for project HttpServer ****
+22:36:08 **** Incremental Build of configuration Debug for project HttpServer ****
 make all 
-Building file: ../src/tcp_server.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tcp_server.d" -MT"src/tcp_server.d" -o "src/tcp_server.o" "../src/tcp_server.cpp"
-Finished building: ../src/tcp_server.cpp
- 
-Building target: HttpServer
-Invoking: GCC C++ Linker
-g++  -o "HttpServer"  ./src/HttpServer.o ./src/tcp_server.o   
-Finished building target: HttpServer
- 
+make: Nothing to be done for `all'.
 
-00:50:26 Build Finished (took 389ms)
+22:36:08 Build Finished (took 104ms)
 

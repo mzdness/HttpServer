@@ -1,0 +1,173 @@
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <pthread.h>
+#include "BlockingQueue.h"
+#include <event2/event.h>
+#include <event2/event_compat.h>
+#include <event2/event_struct.h>
+#include <event2/thread.h>
+#include <cstdlib>
+#include <fcntl.h>
+#include <error.h>
+#include <string>
+using namespace std;
+
+// 事件base
+struct event_base* base;
+struct work
+{
+	int fd;
+	void* pEv;
+};
+BoundedBlockingQueue<work*> work_queue(10);
+
+int work_q[10];
+int p_q = 0;
+
+
+void set_nonblocking(int fd)
+{
+	int flags = fcntl(fd, F_GETFL, 0);
+	fcntl(fd, F_SETFL, flags|O_NONBLOCK);
+}
+
+
+// 读事件回调函数
+void *onRead_t(void *arg)
+{
+
+
+    int iLen=1;
+	cout << "worker "<< arg << " init!" << endl;
+    //char real_buf[1500];
+    string real_buf;
+    char read_buf[2];
+	while(1)
+	{
+		//int  iCliFd = work_q[--p_q];
+		work *pwork = work_queue.pop();
+		int iCliFd = pwork->fd;
+		int client_close = true;
+		while(iLen > 0)
+		{
+			iLen = recv(iCliFd, read_buf, 2, 0);
+			if (client_close && iLen == 0) // is the first read and len is 0 -- client active close
+			{
+				cout << "Client Close iLen = " << iLen << endl;
+
+				// 连接结束(=0)或连接错误(<0)，将事件删除并释放内存空间
+				struct event *pEvRead = (event *)pwork->pEv;
+				event_del(pEvRead);
+				delete pEvRead;
+
+				close(iCliFd);
+
+				// re init
+				iLen = 1;
+
+				break;
+				//return 0;
+			}
+			else if (!client_close && iLen == -1) // not first read and len is -1 -- read all
+			{
+				cout << "Client Info:" << real_buf << endl;
+				cout << "read end iLen = " << iLen << endl;
+				cout << "by worker " << arg << endl;
+
+				// re init
+				iLen = 1;
+				real_buf.clear();
+
+				break;
+				//return 0;
+			}
+			else if (client_close && iLen == -1)
+				cerr <<"sth wrong!"<<endl;
+			else 					// this read work will not close the socket
+				client_close = false;
+
+			read_buf[iLen] = 0;
+			real_buf += read_buf;
+		}
+	}
+	return 0;
+}
+
+void onRead(int iCliFd, short iEvent, void *arg)
+{
+	work * pwork = new work;
+	pwork->fd = iCliFd;
+	pwork->pEv = arg;
+	work_queue.push(pwork);
+	cout << "push! " << work_queue.get_size() <<endl;
+	//if (work_queue.get_size() == 2)
+	//	cout << "error" << endl;
+}
+
+// 连接请求事件回调函数
+void onAccept(int iSvrFd, short iEvent, void *arg)
+{
+    int iCliFd;
+    struct sockaddr_in sCliAddr ;
+
+    socklen_t iSinSize = sizeof(sCliAddr);
+    iCliFd = accept(iSvrFd, (struct sockaddr*)&sCliAddr, &iSinSize);
+    cout << "accept!" << iCliFd << endl;
+	evutil_make_socket_nonblocking(iCliFd);
+    // 连接注册为新事件 (EV_PERSIST为事件触发后不默认删除)
+    //struct event *pEvRead = event_new(base,iCliFd, EV_READ|EV_PERSIST, onRead, arg);
+    struct event *pEvRead = new event;
+    event_assign(pEvRead,base,iCliFd,EV_READ|EV_PERSIST|EV_ET,onRead,pEvRead);
+    event_add(pEvRead, NULL);
+}
+
+int main()
+{
+
+    int iSvrFd;
+	int n=1;
+    struct sockaddr_in sSvrAddr;
+    evthread_use_pthreads();
+    memset(&sSvrAddr, 0, sizeof(sSvrAddr));
+    sSvrAddr.sin_family = AF_INET;
+    sSvrAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    sSvrAddr.sin_port = htons(8888);
+
+
+
+
+    pthread_t pth_id,pth_id2;
+    int no_1 = 1,no_2 = 2;
+
+    int ret = pthread_create(&pth_id,NULL,onRead_t,(void *)no_1);
+    ret = pthread_create(&pth_id2,NULL,onRead_t,(void *)no_2);
+    // 创建tcpSocket（iSvrFd），监听本机8888端口
+    iSvrFd = socket(AF_INET, SOCK_STREAM, 0);
+
+	evutil_make_listen_socket_reuseable(iSvrFd);
+
+    bind(iSvrFd, (struct sockaddr*)&sSvrAddr, sizeof(sSvrAddr));
+    listen(iSvrFd, 10);
+
+    // 初始化base
+    base = event_base_new();
+
+    struct event evListen;
+    // 设置事件
+    event_set(&evListen, iSvrFd, EV_READ|EV_PERSIST, onAccept, NULL);
+    // 设置为base事件
+    event_base_set(base, &evListen);
+    // 添加事件
+    event_add(&evListen, NULL);
+
+    // 事件循环
+    event_base_dispatch(base);
+
+    return 0;
+}

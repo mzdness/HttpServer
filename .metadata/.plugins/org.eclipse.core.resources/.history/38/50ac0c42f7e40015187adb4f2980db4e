@@ -1,0 +1,20 @@
+
+typedef struct __net_work
+{
+	int work_type;
+	int work_sock_fd;
+	char work_desc[100];
+}net_work, *pnet_work;
+
+class net_work_queue
+{
+public:
+	net_work_queue(): pw(0),pr(0){};
+	~net_work_queue() = default;
+	bool add_work(net_work );
+	pnet_work get_work_remove();
+private:
+	int pw;
+	int pr;
+	net_work work_queue[10];
+};

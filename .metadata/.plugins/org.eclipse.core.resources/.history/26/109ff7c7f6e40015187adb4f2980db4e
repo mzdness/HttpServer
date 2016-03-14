@@ -1,0 +1,12 @@
+class net_work_queue
+{
+public:
+	net_work_queue(): pw(0),pr(0){};
+	~net_work_queue() = default;
+	bool add_work(net_work );
+	pnet_work get_work_remove();
+private:
+	int pw;
+	int pr;
+	net_work work_queue[10];
+};
