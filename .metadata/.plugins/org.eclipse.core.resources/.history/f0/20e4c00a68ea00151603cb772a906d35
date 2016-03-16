@@ -1,0 +1,21 @@
+/*
+ * conn.h
+ *
+ *  Created on: Mar 15, 2016
+ *      Author: pzw
+ */
+
+#ifndef CONN_H_
+#define CONN_H_
+
+namespace std {
+
+class conn {
+public:
+	conn();
+	virtual ~conn();
+};
+
+} /* namespace std */
+
+#endif /* CONN_H_ */

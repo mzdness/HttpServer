@@ -1,0 +1,30 @@
+/*
+ * conn.h
+ *
+ *  Created on: Mar 15, 2016
+ *      Author: pzw
+ */
+
+#ifndef CONN_H_
+#define CONN_H_
+
+#include <event2/event.h>
+#include <event2/event_compat.h>
+#include <event2/event_struct.h>
+#include <event2/buffer.h>
+
+class conn {
+public:
+	conn();
+	virtual ~conn();
+
+private:
+	int conn_fd;
+	evbuffer* input;
+	evbuffer* output;
+	event* ev_in;
+	event* ev_out;
+};
+
+
+#endif /* CONN_H_ */

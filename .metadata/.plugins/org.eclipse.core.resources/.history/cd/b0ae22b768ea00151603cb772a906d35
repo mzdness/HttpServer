@@ -1,0 +1,21 @@
+/*
+ * work.cpp
+ *
+ *  Created on: Mar 15, 2016
+ *      Author: pzw
+ */
+
+#include "work.h"
+
+namespace std {
+
+work::work():this_conn(-1),status(ERROR){
+	// TODO Auto-generated constructor stub
+
+}
+
+work::~work() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace std */

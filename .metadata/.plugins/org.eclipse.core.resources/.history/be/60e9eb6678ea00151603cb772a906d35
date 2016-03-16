@@ -1,0 +1,38 @@
+/*
+ * conn.h
+ *
+ *  Created on: Mar 15, 2016
+ *      Author: pzw
+ */
+
+#ifndef CONN_H_
+#define CONN_H_
+
+#include <event2/event.h>
+#include <event2/event_compat.h>
+#include <event2/event_struct.h>
+#include <event2/buffer.h>
+#include <string>
+
+class conn {
+public:
+	conn();
+	conn(event_base* , int , event_callback_fn , event_callback_fn );
+	virtual ~conn();
+
+	int send(char* );
+	int recv(std::string &);
+	void disconn();
+
+private:
+	int conn_fd;
+	evbuffer* input;
+	evbuffer* output;
+	event* ev_in;
+	event* ev_out;
+	event_base* conn_base;
+
+};
+
+
+#endif /* CONN_H_ */

@@ -1,0 +1,148 @@
+/*
+ * conn.cpp
+ *
+ *  Created on: Mar 15, 2016
+ *      Author: pzw
+ */
+
+#include "conn.h"
+
+#include <unistd.h>
+#include <iostream>
+#include <fcntl.h>
+
+using namespace std;
+
+
+conn::conn():conn_fd(-1),ev_in(NULL),ev_out(NULL),conn_base(NULL),target_file_fd(-1),target_file_size(-1) {
+    input = evbuffer_new();
+    output = evbuffer_new();
+}
+
+conn::conn(event_base* base, int fd, event_callback_fn read_cb, event_callback_fn write_cb):target_file_fd(-1),target_file_size(-1) {
+    input = evbuffer_new();
+    output = evbuffer_new();
+    conn_fd = fd;
+    conn_base = base;
+
+    if (read_cb == NULL)
+    	ev_in = NULL;
+    else
+    {
+    	ev_in = event_new(base, fd, EV_READ|EV_PERSIST|EV_ET, read_cb, (void *)this);
+    	event_add(ev_in, NULL);
+    }
+
+    if (write_cb == NULL)
+    	ev_out = NULL;
+    else
+    {
+    	ev_out = event_new(base, fd, EV_READ|EV_PERSIST|EV_ET, write_cb, (void *)this);
+    	event_add(ev_out, NULL);
+    }
+}
+
+conn::~conn() {
+	// TODO Auto-generated destructor stub
+	close(conn_fd);
+	if (ev_in)
+		event_del(ev_in);
+	if (ev_out)
+		event_del(ev_out);
+	if (input)
+		evbuffer_free(input);
+	if (output)
+		evbuffer_free(output);
+}
+
+void conn::disconn()
+{
+	close(conn_fd);
+	if (target_file_fd)
+		close(target_file_fd);
+	if (ev_in)
+		event_del(ev_in);
+	if (ev_out)
+		event_del(ev_out);
+	if (input)
+		evbuffer_free(input);
+	if (output)
+		evbuffer_free(output);
+}
+
+int conn::send(char* s)
+{
+	if (-1 == evbuffer_add_printf(output,"%s",s))
+		cerr << "evbuffer printf error!" << endl;
+	return evbuffer_write(output, conn_fd);
+}
+
+int conn::recv(string &real_buf)
+{
+	int iLen = 0;
+	bool first_read=true;
+	int recv_size = 0;
+    char read_buf[3]; // one shot read
+    while(1)
+    {
+		iLen = evbuffer_read(input, conn_fd, sizeof(read_buf)-1);
+		if (iLen > 0)
+		{
+			first_read = false;
+			recv_size += iLen;
+			evbuffer_remove(input, read_buf, iLen);
+			read_buf[iLen] = 0;
+			real_buf += read_buf;
+		}
+		else if (!first_read && iLen == -1)
+		{
+			cout << "read end!" << endl;
+			break;
+		}
+		else if (first_read && iLen == 0)
+		{
+			cout << "connection close!" << endl;
+			disconn();
+			break;
+		}
+		else  // iLen < 0
+		{
+			cerr << "error iLen = " << iLen << "; first_read = "<< first_read << endl;
+			break;
+		}
+    }
+    return iLen;
+}
+
+int conn::open_tar_file(string &fn)
+{
+	int rd_file_fd = open(fn.c_str(),O_RDONLY);
+	if ( -1 == rd_file_fd){
+		cerr << "open file_error" << endl;
+		return -1;
+	}
+	target_file_fd = rd_file_fd;
+	target_file_size = lseek(rd_file_fd, 0, SEEK_END);
+	return 0;
+}
+
+int conn::set_tar_file_offset(int seg_idx)
+{
+
+	if (-1 == lseek(target_file_fd,target_file_size/4*seg_idx,SEEK_SET)) // move rd_file_fd file_size/4 bytes from SEEK_SET(beginning of file)
+		return -1;
+	return 0;
+}
+
+int conn::get_tar_file_size()
+{
+	if (target_file_fd != -1)
+		return target_file_size;
+	else
+		return -1;
+}
+
+int conn::read_file_to_buf(char * buf, size_t size)
+{
+	return read(target_file_fd,buf,size);
+}

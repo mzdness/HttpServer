@@ -7,13 +7,19 @@ O_SRCS += \
 ../src/libevent_test.o 
 
 CPP_SRCS += \
-../src/libevent_test_new.cpp 
+../src/conn.cpp \
+../src/libevent_test_new.cpp \
+../src/work.cpp 
 
 OBJS += \
-./src/libevent_test_new.o 
+./src/conn.o \
+./src/libevent_test_new.o \
+./src/work.o 
 
 CPP_DEPS += \
-./src/libevent_test_new.d 
+./src/conn.d \
+./src/libevent_test_new.d \
+./src/work.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

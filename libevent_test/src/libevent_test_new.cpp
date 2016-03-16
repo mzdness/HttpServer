@@ -19,24 +19,23 @@
 #include <fcntl.h>
 #include <error.h>
 #include <string>
+#include "work.h"
+#include "conn.h"
 using namespace std;
 
+#define SND_RND_SIZE 2
 // TODO: switch to evbuffer + thread!
-//
-enum status_e
+enum w_proc_ret
 {
-	READ = 0,
-	CLOSE,
-	CONNECTED
+	UDEF_ERROR = -1,
+	SUCCESS,
+	ILLGAL_FNAME,
+	ILLGAL_SEG,
+	ILLGAL_ACK,
+	CANNOT_OPEN,
+	CONN_CLOSE
 };
 
-struct work
-{
-	int fd;
-	void* pEv;
-	status_e status;
-	short events;
-};
 BoundedBlockingQueue<work*> work_queue(10);
 
 sockaddr_in* init_sin_ipv4(const char* ip_addr, short port)
@@ -49,67 +48,106 @@ sockaddr_in* init_sin_ipv4(const char* ip_addr, short port)
     return psin;
 }
 
-// 读事件回调函数
+w_proc_ret worker_process_request(conn* const this_conn, const string& in)
+{
+	int name_end,seg_end;
+	// parse request
+	if (in.substr(0,3) == "FN:"){
+		name_end = in.find('|');
+		string file_name = in.substr(3,name_end-3);
+		//cout << file_name << endl;
+		if (file_name.empty())
+			return ILLGAL_FNAME;
+		if (in.substr(name_end+1,4) == "SEG:")
+			seg_end = in.find('|',name_end+5);
+		string seg_str = in.substr(name_end+5,seg_end-name_end-5);
+		if (seg_str.empty())
+			return ILLGAL_SEG;
+		int seg_no = atoi(seg_str.c_str());
+
+		// relate this file with current connection
+		if (-1 == this_conn->open_tar_file(file_name))
+		{
+			cerr << "open_tar_file failed" << endl;
+			return CANNOT_OPEN;
+		}
+
+		if (-1 == this_conn->set_tar_file_offset(seg_no)) // move rd_file_fd file_size/4*seg_no bytes from SEEK_SET(beginning of file)
+		{
+			cerr<< "file position error" << endl;
+			return ILLGAL_SEG;
+		}
+
+		char file_buf[SND_RND_SIZE+1];
+		int file_size = this_conn->get_tar_file_size();
+		int size_to_send = file_size/4; // init to be segment size
+		// when done sending a segment, free this work, wait for receiver to finish its file op and ACK
+		while(size_to_send > 0)
+		{
+			int read_len = this_conn->read_file_to_buf(file_buf,SND_RND_SIZE);
+			if (-1 == read_len)
+				cerr << "file read error" << endl;
+			file_buf[SND_RND_SIZE] = '\0';
+			this_conn->send(file_buf);
+			size_to_send -= read_len;
+		}
+		return SUCCESS;
+	}
+	// ACK is needed because receiver need to do file IO
+	else if (in.substr(0,4) == "ACK:")
+	{
+		int ack_end = in.find('|');
+		string ack_str = in.substr(4,ack_end-4);
+		if (ack_str.empty())
+			return ILLGAL_ACK;
+		int ack_no = atoi(ack_str.c_str());
+
+		int next_end = in.find('|',ack_end+1);
+		string next_str = in.substr(ack_end+1,next_end-ack_end-1);
+		if (next_str.empty())
+			return ILLGAL_ACK;
+		int next_no = atoi(next_str.c_str());
+
+		if (-1 == this_conn->set_tar_file_offset(next_no)) // move rd_file_fd file_size/4*seg_no bytes from SEEK_SET(beginning of file)
+		{
+			cerr<< "file position error" << endl;
+			return ILLGAL_SEG;
+		}
+		char file_buf[SND_RND_SIZE+1];
+		int file_size = this_conn->get_tar_file_size();
+		int size_to_send = file_size/4; // init to be segment size
+		// when done sending a segment, free this work, wait for receiver to finish its file IO and ACK
+		while(size_to_send > 0)
+		{
+			int read_len = this_conn->read_file_to_buf(file_buf,SND_RND_SIZE);
+			if (-1 == read_len)
+				cerr << "file read error" << endl;
+			file_buf[read_len] = '\0';
+			this_conn->send(file_buf);
+			size_to_send -= read_len;
+		}
+		return SUCCESS;
+	}
+	else
+	{
+    	this_conn->send("Error REQ, connection closing... \n");
+		this_conn->disconn();
+		return CONN_CLOSE;
+	}
+}
+
 void *worker_thread(void *arg)
 {
     int iLen=1;
 	cout << "worker "<< arg << " init!" << endl;
-    //char real_buf[1500];
     string real_buf;
-    char read_buf[3];
 	while(1)
 	{
-		//int  iCliFd = work_q[--p_q];
 		work *pwork = work_queue.pop();
-		bufferevent *bev = (bufferevent *)pwork->pEv;
-
-		if (pwork->status == CLOSE)
-		{
-			if (pwork->events & BEV_EVENT_ERROR)
-					perror("Error from bufferevent");
-			if (pwork->events & (BEV_EVENT_EOF | BEV_EVENT_ERROR)) {
-			    	// use this to close socket
-				if (bev)
-					bufferevent_free(bev);
-				else
-					cerr << "bufferevent_free error" << endl;
-			}
-	        cout << "handle event" << "-signature: " << arg <<endl;
-	        if (pwork)
-	        	delete pwork;
-	        else
-	        	cerr << "free pwork error" << endl;
-			continue;
-		}
-		else if (pwork->status == CONNECTED)
-		{
-			cout << "CONNECTED" <<"-signature: " << arg << endl;
-			char wel_msg[] = "Hi server\r\n";
-			bufferevent_write(bev,wel_msg,sizeof(wel_msg));
-	        if (pwork)
-	        	delete pwork;
-	        else
-	        	cerr << "free pwork error" << endl;
-		    //struct evbuffer *output = bufferevent_get_output(bev);
-		    //int ret = evbuffer_add(output,"Hi serv\r\n",10);
-	        continue;
-		}
-
-        //struct evbuffer *input = bufferevent_get_input(bev);
+		conn* this_conn =  pwork->get_this_conn();
 
         // here we process read event: read bev until it drains out
-        while(1)
-        {
-            //iLen = evbuffer_remove(input,read_buf,sizeof(read_buf)-1);
-            iLen = bufferevent_read(bev,read_buf,sizeof(read_buf)-1);
-            if (iLen > 0)
-            {
-            	read_buf[iLen] = 0;
-            	real_buf += read_buf;
-            }
-            else
-            	break;
-        }
+		int recv_ret = this_conn->recv(real_buf);
 
         // remove tailing \r\n
         if (real_buf.size()>2)
@@ -120,13 +158,41 @@ void *worker_thread(void *arg)
 				real_buf.erase(real_buf.end()-1);
         	}
 
-			cout << "[recv]: " << real_buf << "; size = " << real_buf.size()
-					<< "-wker_sig: " << arg << endl;
+			cout << "[recv]: \"" << real_buf << "\"; size = " << real_buf.size()
+					<< "  --wker_sig: " << arg << endl;
         }
 
         if (real_buf == "Hi server")
-			bufferevent_write(bev,"Hi client",10);
-        // free work resources
+        {
+        	/* show current working directory
+        	char *file_path_getcwd;
+			file_path_getcwd=(char *)malloc(80);
+			getcwd(file_path_getcwd,80);
+			printf("%s",file_path_getcwd);
+			*/
+
+        	// open desired file and read chunk of data;
+        	int rd_file_fd = open("./test.txt",O_RDONLY);
+        	if ( -1 == rd_file_fd)
+        		cerr << "open file_error" << endl;
+        	int file_size = lseek(rd_file_fd, 0, SEEK_END);
+        	//cerr << __FILE__ << __LINE__ << endl;
+        	if (-1 == lseek(rd_file_fd,file_size/2,SEEK_SET)) // move rd_file_fd file_size/2 byte from SEEK_SET(beginning of file)
+        		cerr<< "file position error" << endl;
+        	char file_buf[100] ;
+        	if (-1 == read(rd_file_fd,file_buf,file_size/2))
+        		cerr << "file read error" << endl;
+        	file_buf[file_size/2] = '\0';
+
+        	this_conn->send(file_buf);
+        	close(rd_file_fd);
+        }
+        else if (recv_ret != CLOSED_BY_PEER)
+        {
+        	int ret = worker_process_request(this_conn,real_buf);
+        }
+
+        // free work resources, this work end
         iLen = 1;
         real_buf.clear();
         if (pwork)
@@ -134,24 +200,18 @@ void *worker_thread(void *arg)
         else
         	cerr << "free pwork error" << endl;
 
-        //struct evbuffer *output = bufferevent_get_output(bev);
-
-        /* Copy all the data from the input buffer to the output buffer. */
-        //evbuffer_add_buffer(output, input);
 	}
 	return 0;
 }
 
-//void onRead(int iCliFd, short iEvent, void *arg)
-void onRead(struct bufferevent *bev, void *arg)
+void onRead(int iCliFd, short iEvent, void *arg)
 {
-	work * pwork = new work;
-	pwork->pEv = bev;
-	pwork->status = READ;
+	work* pwork = new work((conn*) arg, READ);
 	cout << "push a read! " << work_queue.get_size() <<endl;
 	work_queue.push(pwork);
 }
 
+/*
 void onEvent(struct bufferevent *bev, short events, void *ctx)
 {
 	work * pwork = new work;
@@ -164,20 +224,16 @@ void onEvent(struct bufferevent *bev, short events, void *ctx)
 	cout << "push a event! " << work_queue.get_size() <<endl;
 	work_queue.push(pwork);
 }
+*/
 
 // 连接请求事件回调函数
 void onAccept(struct evconnlistener *listener,
-	    evutil_socket_t iCliFd, struct sockaddr *address, int socklen,
+	    evutil_socket_t conn_fd, struct sockaddr *address, int socklen,
 	    void *arg)
 {
-    /* We got a new connection! Set up a bufferevent for it. */
-    struct event_base *base = evconnlistener_get_base(listener);
-    struct bufferevent *bev = bufferevent_socket_new(
-            base, iCliFd, BEV_OPT_CLOSE_ON_FREE);
-    cout << "accept!" << iCliFd << endl;
-
-    bufferevent_setcb(bev, onRead, NULL, onEvent, arg);
-    bufferevent_enable(bev, EV_READ|EV_WRITE); // is it persist?
+    cout << "accept!" << conn_fd << endl;
+    // init connection structure
+    conn* pconn = new conn((event_base*) arg,conn_fd,onRead,NULL);
 }
 
 // Instead of regular events, which give callbacks when the underlying
@@ -192,21 +248,9 @@ void onWrite(bufferevent *bev, void *ctx)
 
 int connectServer(char* ip, int port,event_base* base)
 {
-	// here fd set to -1 means we will set it later
-    struct bufferevent *bev = bufferevent_socket_new(base, -1, BEV_OPT_CLOSE_ON_FREE);
-
-    bufferevent_setcb(bev, onRead, onWrite, onEvent, NULL);
-
-    struct sockaddr_in *psin = init_sin_ipv4("127.0.0.1",8888);
-
-	bufferevent_socket_connect(bev, (struct sockaddr *)psin, sizeof(sockaddr));
-
-    bufferevent_enable(bev, EV_READ|EV_WRITE); // is it persist?
-
-	/*
-     int fd = socket( AF_INET, SOCK_STREAM, 0 );
-     cout<<"fd= "<<fd<<endl;
-     if(-1 == fd){
+     int conn_fd = socket( AF_INET, SOCK_STREAM, 0 );
+     cout<<"fd = "<<conn_fd<<endl;
+     if(-1 == conn_fd){
          cout<<"Error, connectServer() quit"<<endl;
          return -1;
      }
@@ -215,25 +259,23 @@ int connectServer(char* ip, int port,event_base* base)
      remote_addr.sin_family=AF_INET; //设置为IP通信
      remote_addr.sin_addr.s_addr=inet_addr(ip);//服务器IP地址
      remote_addr.sin_port=htons(port); //服务器端口号
-     int con_result = connect(fd, (struct sockaddr*) &remote_addr, sizeof(struct sockaddr));
+     int con_result = connect(conn_fd, (struct sockaddr*) &remote_addr, sizeof(struct sockaddr));
      if(con_result < 0){
          cout<<"Connect Error!"<<endl;
-         close(fd);
+         close(conn_fd);
          return -1;
      }
      cout<<"con_result="<<con_result<<endl;
-	 */
 
-     //struct evbuffer *output = bufferevent_get_output(bev);
-     //int ret = evbuffer_add(output,"Hi serv\r\n",10);
-    // int ret = bufferevent_write(bev,"Hi serv\r\n",10);
 
-     //int write_num = write(fd, "Hi server",10);
+     // init connection structure
+     evutil_make_socket_nonblocking(conn_fd);// no evconnlistener, have to do this manually
+     struct conn* pconn = new conn(base,conn_fd,onRead,NULL);
 
-    // bufferevent_free(bev);
-     //bufferevent_setcb(bev, onRead, NULL, onEvent, arg);
-     //bufferevent_enable(bev, EV_READ|EV_WRITE); // is it persist?
-
+    // send hello
+     pconn->send("FN:test.txt|SEG:1|");
+     string b;
+     pconn->recv(b);
      return 0;
  }
 
@@ -266,14 +308,18 @@ int main(int argc, char* argv[])
 
     //  this thread handle all outgoing socket, send out file request and receive file segment
     // comment this thread to disable active conn
-    if (argc > 1 && argv[1][0] == 'c')
+
+    //if (argc > 1 && argv[1][0] == 'c')
+    if (argc==1)
     {
+    	cout << "[s] now run active conn!" << endl;
 		ret = pthread_create(&pth_req_main,NULL,request_main,(void *)no_2);
 		if (ret<0)
 			cerr << "[s]unable to init request_main thread!" << endl;
 		pthread_join(pth_req_main,NULL);
     }
-    else
+    //else
+    if (argc > 1 && argv[1][0] == 's')
     {
         // this thread handle all incoming socket, receive file req and send the requested file segment
         // 初始化base
@@ -283,7 +329,8 @@ int main(int argc, char* argv[])
 		struct sockaddr_in *psin = init_sin_ipv4("127.0.0.1",8888);
 
 		evconnlistener *listener;
-		listener = evconnlistener_new_bind(base, onAccept, NULL,
+		// evconnlistener automatically set new conn fd to be non blocking
+		listener = evconnlistener_new_bind(base, onAccept, base,
 				LEV_OPT_CLOSE_ON_FREE|LEV_OPT_REUSEABLE, -1,
 				(sockaddr*)psin, sizeof(sockaddr));
 

@@ -1,0 +1,25 @@
+/*
+ * work.h
+ *
+ *  Created on: Mar 15, 2016
+ *      Author: pzw
+ */
+
+#ifndef WORK_H_
+#define WORK_H_
+
+
+class work {
+public:
+	work();
+	virtual ~work();
+
+private:
+	conn* this_conn;
+	//int fd;
+	//void* pEv;
+	status_e status;
+};
+
+
+#endif /* WORK_H_ */
